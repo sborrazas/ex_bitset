@@ -3,9 +3,13 @@ defmodule ExBitset.MixProject do
 
   def project do
     [
-      app: :app,
-      version: "1.0.0",
+      app: :ex_bitset,
+      version: "1.1.0",
       elixir: "~> 1.12",
+
+      description: "Bitsets implementation",
+      package: package(),
+
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       dialyzer: dialyzer()
@@ -36,6 +40,14 @@ defmodule ExBitset.MixProject do
         :unknown,
         :unmatched_returns
       ]
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Sebastian Borrazas"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/sborrazas/ex_bitset"}
     ]
   end
 end
