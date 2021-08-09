@@ -166,4 +166,14 @@ defmodule ExBitset do
       {:ok, ExBitset.count(bitset), fn start, length -> Enum.slice(set_domain, start, length) end}
     end
   end
+
+  defimpl Inspect, for: ExBitset do
+    import Inspect.Algebra
+
+    @impl true
+    def inspect(bitset, opts) do
+      modname = bitset.mod |> Module.split() |> List.last()
+      concat(["#ExBitset::#{modname}<", to_doc(ExBitset.to_list(bitset), opts), ">"])
+    end
+  end
 end
