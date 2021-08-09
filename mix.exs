@@ -4,7 +4,7 @@ defmodule ExBitset.MixProject do
   def project do
     [
       app: :ex_bitset,
-      version: "1.1.0",
+      version: "1.1.1",
       elixir: "~> 1.12",
 
       description: "Bitsets implementation",
